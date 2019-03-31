@@ -15,7 +15,7 @@ class SwaggerConfig{
     @Bean
     open fun api():Docket = Docket(DocumentationType.SWAGGER_2)
             .select()
-            .apis(RequestHandlerSelectors.any())
+            .apis(RequestHandlerSelectors.basePackage("com.my.kotlin.todoApp.controller"))
             .paths(PathSelectors.any())
             .build()
 }
